@@ -45,7 +45,7 @@ export default function Modpacks() {
 
                   <div className="flex flex-wrap gap-1.5 mt-4">
                     {project.tags.map(tag => (
-                      <span key={tag} className="px-2 py-0.5 rounded-md text-xs bg-white/5 text-muted-foreground border border-white/5">
+                      <span key={tag} className="px-2 py-0.5 rounded-md text-xs bg-muted text-muted-foreground border border-border">
                         {tag}
                       </span>
                     ))}

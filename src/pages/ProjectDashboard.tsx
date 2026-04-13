@@ -195,8 +195,8 @@ export default function ProjectDashboard() {
                     disabled={dl.status === 'soon'}
                     className={`w-full flex items-center gap-4 p-4 rounded-xl transition-smooth ${
                       dl.status === 'active'
-                        ? 'glass hover:bg-white/10 cursor-pointer'
-                        : 'bg-white/3 opacity-50 cursor-not-allowed'
+                    ? 'glass hover:bg-muted cursor-pointer'
+                        : 'bg-secondary opacity-50 cursor-not-allowed'
                     }`}
                   >
                     <span className="text-2xl">{platformIcons[dl.platform]}</span>
