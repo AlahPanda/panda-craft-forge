@@ -23,17 +23,22 @@ const App = () => (
         <Toaster />
         <Sonner />
         <BrowserRouter>
-          <TopNav />
-          <Routes>
-            <Route path="/" element={<Landing />} />
-            <Route path="/modpacks" element={<Modpacks />} />
-            <Route path="/project/:slug" element={<ProjectDashboard />} />
-            <Route path="/news" element={<News />} />
-            <Route path="/news/:id" element={<NewsArticle />} />
-            <Route path="/about" element={<About />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-          <Footer />
+          {/* Adicionamos a div com bg-grid aqui para cobrir o site todo */}
+          <div className="min-h-screen bg-background bg-grid flex flex-col">
+            <TopNav />
+            <main className="flex-1">
+              <Routes>
+                <Route path="/" element={<Landing />} />
+                <Route path="/modpacks" element={<Modpacks />} />
+                <Route path="/project/:slug" element={<ProjectDashboard />} />
+                <Route path="/news" element={<News />} />
+                <Route path="/news/:id" element={<NewsArticle />} />
+                <Route path="/about" element={<About />} />
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+            </main>
+            <Footer />
+          </div>
         </BrowserRouter>
       </I18nProvider>
     </TooltipProvider>
