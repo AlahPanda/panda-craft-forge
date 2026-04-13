@@ -5,8 +5,6 @@ import { ArrowLeft, CheckCircle, AlertTriangle, ExternalLink, X } from 'lucide-r
 import { getProjectBySlug, type ProjectDownload } from '@/data/projects';
 import { useI18n } from '@/contexts/I18nContext';
 
-const { t, dict } = useI18n();
-
 const platformIcons: Record<string, string> = {
   modrinth: '🟢',
   curseforge: '🔥',
@@ -23,7 +21,10 @@ type Tab = 'requirements' | 'instructions';
 
 export default function ProjectDashboard() {
   const { slug } = useParams<{ slug: string }>();
-  const { t } = useI18n();
+  
+  // CORREÇÃO: Puxamos 't' para funções e 'dict' para caminhos fixos
+  const { t, dict } = useI18n();
+  
   const project = getProjectBySlug(slug || '');
   const [tab, setTab] = useState<Tab>('requirements');
   const [downloadOpen, setDownloadOpen] = useState(false);
@@ -33,7 +34,7 @@ export default function ProjectDashboard() {
       <div className="min-h-screen flex items-center justify-center pt-16 px-4">
         <div className="text-center">
           <h1 className="text-2xl font-bold text-foreground mb-2">Project not found</h1>
-          <Link to="/modpacks" className="text-primary hover:underline">{t.project.back}</Link>
+          <Link to="/modpacks" className="text-primary hover:underline">{dict.project.back}</Link>
         </div>
       </div>
     );
@@ -41,17 +42,12 @@ export default function ProjectDashboard() {
 
   const handleDownloadClick = (dl: ProjectDownload) => {
     if (dl.status === 'soon') return;
-    if (dl.hasAdfly) {
-      // For Astralrinth, open with ad redirect disclaimer
-      window.open(dl.url, '_blank');
-    } else {
-      window.open(dl.url, '_blank');
-    }
+    window.open(dl.url, '_blank');
   };
 
   const tabs: { key: Tab; label: string }[] = [
-    { key: 'requirements', label: t.project.requirements },
-    { key: 'instructions', label: t.project.instructions },
+    { key: 'requirements', label: dict.project.requirements },
+    { key: 'instructions', label: dict.project.instructions },
   ];
 
   return (
@@ -62,7 +58,7 @@ export default function ProjectDashboard() {
           to="/modpacks"
           className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-smooth text-sm mb-8"
         >
-          <ArrowLeft className="w-4 h-4" /> {t.project.back}
+          <ArrowLeft className="w-4 h-4" /> {dict.project.back}
         </Link>
 
         {/* Header */}
@@ -81,6 +77,7 @@ export default function ProjectDashboard() {
                 v{project.version}
               </span>
             </div>
+            {/* Usamos t() para chaves dinâmicas com pontos */}
             <p className="text-primary/70 font-medium mt-1">{t(project.subtitle)}</p>
             <p className="text-muted-foreground mt-3 max-w-2xl">{t(project.description)}</p>
             <div className="flex flex-wrap gap-1.5 mt-4">
@@ -95,7 +92,7 @@ export default function ProjectDashboard() {
             onClick={() => setDownloadOpen(true)}
             className="px-6 py-3 rounded-xl bg-primary text-primary-foreground font-semibold hover:bg-primary/90 transition-smooth shrink-0"
           >
-            {t.project.download}
+            {dict.project.download}
           </button>
         </motion.div>
 
@@ -184,7 +181,7 @@ export default function ProjectDashboard() {
               className="relative glass-strong rounded-2xl p-6 w-full max-w-md z-[101]"
             >
               <div className="flex items-center justify-between mb-6">
-                <h2 className="font-display font-bold text-xl text-foreground">{t.project.downloadModal}</h2>
+                <h2 className="font-display font-bold text-xl text-foreground">{dict.project.downloadModal}</h2>
                 <button onClick={() => setDownloadOpen(false)} className="text-muted-foreground hover:text-foreground transition-smooth">
                   <X className="w-5 h-5" />
                 </button>
@@ -206,8 +203,8 @@ export default function ProjectDashboard() {
                       <p className="font-semibold text-foreground">{platformNames[dl.platform]}</p>
                       <p className="text-xs text-muted-foreground">
                         {dl.status === 'active'
-                          ? dl.hasAdfly ? t.project.adRedirect : t.project.active
-                          : t.project.soon}
+                          ? dl.hasAdfly ? dict.project.adRedirect : dict.project.active
+                          : dict.project.soon}
                       </p>
                     </div>
                     {dl.status === 'active' && <ExternalLink className="w-4 h-4 text-primary" />}
