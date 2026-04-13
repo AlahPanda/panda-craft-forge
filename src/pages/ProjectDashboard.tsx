@@ -79,8 +79,8 @@ export default function ProjectDashboard() {
                 v{project.version}
               </span>
             </div>
-            <p className="text-primary/70 font-medium mt-1">{project.subtitle}</p>
-            <p className="text-muted-foreground mt-3 max-w-2xl">{project.description}</p>
+            <p className="text-primary/70 font-medium mt-1">{t(project.subtitle)}</p>
+            <p className="text-muted-foreground mt-3 max-w-2xl">{t(project.description)}</p>
             <div className="flex flex-wrap gap-1.5 mt-4">
               {project.tags.map(tag => (
                 <span key={tag} className="px-2.5 py-1 rounded-md text-xs bg-white/5 text-muted-foreground border border-white/5">
@@ -128,7 +128,7 @@ export default function ProjectDashboard() {
                 <div key={req.label} className="glass rounded-xl p-5 flex items-center gap-4">
                   <span className="text-2xl">{req.icon}</span>
                   <div className="flex-1 min-w-0">
-                    <p className="text-xs text-muted-foreground">{req.label}</p>
+                    <p className="text-xs text-muted-foreground">{t(req.label)}</p>
                     <p className="text-sm font-semibold text-foreground truncate">{req.value}</p>
                   </div>
                   {req.status === 'check' ? (
@@ -154,7 +154,7 @@ export default function ProjectDashboard() {
                     <span className="w-8 h-8 rounded-lg bg-primary/10 text-primary font-bold text-sm flex items-center justify-center shrink-0">
                       {inst.step}
                     </span>
-                    <p className="text-foreground text-sm leading-relaxed pt-1">{inst.text}</p>
+                    <p className="text-foreground text-sm leading-relaxed pt-1">{t(inst.text)}</p>
                   </li>
                 ))}
               </ol>
