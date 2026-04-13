@@ -28,7 +28,7 @@
     "rating": "Rating",
     "version": "Version"
   },
-  "project": {
+"project": {
     "requirements": "Requirements",
     "instructions": "Instructions",
     "download": "Download",
@@ -36,7 +36,43 @@
     "downloadModal": "Choose Platform",
     "active": "Download",
     "soon": "Coming Soon",
-    "adRedirect": "Download (Ad-Supported)"
+    "adRedirect": "Download (Ad-Supported)",
+    "requirements_list": {
+      "os": "OS",
+      "ram": "RAM",
+      "chip": "Chip",
+      "loader": "Loader",
+      "gpu_val": "Dedicated GPU",
+      "storage": "Storage"
+    },
+    "mac-native": {
+      "subtitle": "Optimized for Apple Silicon",
+      "description": "A performance-focused modpack built specifically for macOS with Apple Silicon optimization. Enjoy Minecraft at its best on your Mac with native ARM performance.",
+      "step1": "Download and install the Modrinth App or Prism Launcher.",
+      "step2": "Search for \"Mac Native\" in the modpack browser or import the file.",
+      "step3": "Allocate at least 4 GB of RAM in the launcher settings.",
+      "step4": "Ensure you have Java 17+ (ARM build) installed.",
+      "step5": "Launch and enjoy optimized performance on your Mac!"
+    },
+    "crafttoons": {
+      "subtitle": "Cartoon-Styled Minecraft",
+      "description": "Transform your Minecraft experience with vibrant cartoon aesthetics, custom shaders, and handpicked visual mods that make every block pop with personality.",
+      "step1": "Download and install Prism Launcher or MultiMC.",
+      "step2": "Import the CraftToons+ modpack file.",
+      "step3": "Allocate at least 6 GB of RAM for optimal shader performance.",
+      "step4": "Enable the included shader pack from Video Settings > Shader Packs.",
+      "step5": "Adjust shader quality based on your GPU capability."
+    },
+    "astralrinth": {
+      "subtitle": "Explore the Cosmos",
+      "description": "A space exploration modpack featuring custom dimensions, galactic biomes, and interstellar adventure. Build your rocket and explore the unknown universe.",
+      "step1": "Download the modpack from the Mediafire link below.",
+      "step2": "Install CurseForge App or Prism Launcher.",
+      "step3": "Import the downloaded .zip file into your launcher.",
+      "step4": "Allocate at least 8 GB of RAM for the best experience.",
+      "step5": "Launch the modpack and start your space journey!"
+    }
+  }
   },
   "news": {
     "title": "Lab Updates",
