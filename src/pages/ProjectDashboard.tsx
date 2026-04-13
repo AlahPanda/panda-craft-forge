@@ -5,6 +5,8 @@ import { ArrowLeft, CheckCircle, AlertTriangle, ExternalLink, X } from 'lucide-r
 import { getProjectBySlug, type ProjectDownload } from '@/data/projects';
 import { useI18n } from '@/contexts/I18nContext';
 
+const { t, dict } = useI18n();
+
 const platformIcons: Record<string, string> = {
   modrinth: '🟢',
   curseforge: '🔥',
