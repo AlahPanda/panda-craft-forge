@@ -1,0 +1,58 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "modpacks": "Modpacks",
+    "news": "Actualizaciones",
+    "about": "Acerca de",
+    "discord": "Discord"
+  },
+  "landing": {
+    "title": "AlahPanda Labs",
+    "subtitle": "Modpacks de Minecraft Artesanales",
+    "cta": "Explorar Modpacks",
+    "features": {
+      "safe": "Seguro & Probado",
+      "safeDesc": "Cada modpack se prueba manualmente para estabilidad y rendimiento.",
+      "native": "Plataforma Nativa",
+      "nativeDesc": "Las actualizaciones se entregan a través de Modrinth y CurseForge nativamente.",
+      "open": "Código Abierto",
+      "openDesc": "Listas de mods y configuraciones transparentes que puedes inspeccionar."
+    }
+  },
+  "modpacks": {
+    "title": "Hub de Modpacks",
+    "subtitle": "Explora nuestra colección curada de modpacks de Minecraft",
+    "explore": "Explorar",
+    "comingSoon": "Más modpacks próximamente...",
+    "downloads": "Descargas",
+    "rating": "Valoración",
+    "version": "Versión"
+  },
+  "project": {
+    "requirements": "Requisitos",
+    "instructions": "Instrucciones",
+    "download": "Descargar",
+    "back": "Volver",
+    "downloadModal": "Elige Plataforma",
+    "active": "Descargar",
+    "soon": "Próximamente",
+    "adRedirect": "Descargar (Con Anuncio)"
+  },
+  "news": {
+    "title": "Actualizaciones del Lab",
+    "subtitle": "Últimas noticias y anuncios del laboratorio",
+    "readMore": "Leer Más",
+    "featured": "Destacado"
+  },
+  "about": {
+    "title": "El Panda Solitario",
+    "body1": "¡Hola! 👋 Bienvenido a AlahPanda Labs — un show de un solo desarrollador, impulsado por pasión, una cantidad insana de café y un MacBook que cuestiona sus decisiones de vida.",
+    "body2": "Esto no es una plataforma. No es una startup. Es un repositorio personal curado para mis modpacks de Minecraft — con guías directas, metadatos optimizados y cero tontería corporativa.",
+    "body3": "Cada modpack aquí nació de horas de pruebas, ajustes y ocasionalmente gritarle a archivos de configuración. Construyo lo que quiero jugar y lo comparto porque... ¿por qué no?",
+    "body4": "Si algo se rompe, es una feature. Si algo funciona perfectamente, estoy tan sorprendido como tú. 🐼"
+  },
+  "footer": {
+    "version": "v1.1.0-stable",
+    "tagline": "AlahPanda Labs — Hecho con pasión"
+  }
+}
