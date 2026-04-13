@@ -52,10 +52,10 @@ export const projects: Project[] = [
     downloadCount: 2340,
     mcVersion: '1.20.4',
     requirements: [
-      { label: 'project.requirements.os', value: 'macOS 13+', icon: '💻', status: 'check' },
-      { label: 'project.requirements.ram', value: '4 GB+', icon: '🧠', status: 'check' },
-      { label: 'project.requirements.chip', value: 'Apple Silicon', icon: '⚡', status: 'check' },
-      { label: 'project.requirements.loader', value: 'Fabric', icon: '🧵', status: 'check' },
+      { label: 'project.requirements_list.os', value: 'macOS 13+', icon: '💻', status: 'check' },
+      { label: 'project.requirements_list.ram', value: '4 GB+', icon: '🧠', status: 'check' },
+      { label: 'project.requirements_list.chip', value: 'Apple Silicon', icon: '⚡', status: 'check' },
+      { label: 'project.requirements_list.loader', value: 'Fabric', icon: '🧵', status: 'check' },
     ],
     instructions: [
       { step: 1, text: 'project.mac-native.step1' },
@@ -82,10 +82,10 @@ export const projects: Project[] = [
     downloadCount: 1120,
     mcVersion: '1.20.4',
     requirements: [
-      { label: 'project.requirements.os', value: 'Any', icon: '💻', status: 'check' },
-      { label: 'project.requirements.ram', value: '6 GB+', icon: '🧠', status: 'warning' },
-      { label: 'project.requirements.gpu', value: 'project.requirements.gpu_val', icon: '🎮', status: 'warning' },
-      { label: 'project.requirements.loader', value: 'Fabric', icon: '🧵', status: 'check' },
+      { label: 'project.requirements_list.os', value: 'Any', icon: '💻', status: 'check' },
+      { label: 'project.requirements_list.ram', value: '6 GB+', icon: '🧠', status: 'warning' },
+      { label: 'project.requirements_list.gpu', value: 'project.requirements_list.gpu_val', icon: '🎮', status: 'warning' },
+      { label: 'project.requirements_list.loader', value: 'Fabric', icon: '🧵', status: 'check' },
     ],
     instructions: [
       { step: 1, text: 'project.crafttoons.step1' },
@@ -112,10 +112,10 @@ export const projects: Project[] = [
     downloadCount: 4500,
     mcVersion: '1.20.1',
     requirements: [
-      { label: 'project.requirements.os', value: 'Any', icon: '💻', status: 'check' },
-      { label: 'project.requirements.ram', value: '8 GB+', icon: '🧠', status: 'warning' },
-      { label: 'project.requirements.storage', value: '2 GB+', icon: '💾', status: 'check' },
-      { label: 'project.requirements.loader', value: 'Forge', icon: '🔨', status: 'check' },
+      { label: 'project.requirements_list.os', value: 'Any', icon: '💻', status: 'check' },
+      { label: 'project.requirements_list.ram', value: '8 GB+', icon: '🧠', status: 'warning' },
+      { label: 'project.requirements_list.storage', value: '2 GB+', icon: '💾', status: 'check' },
+      { label: 'project.requirements_list.loader', value: 'Forge', icon: '🔨', status: 'check' },
     ],
     instructions: [
       { step: 1, text: 'project.astralrinth.step1' },
