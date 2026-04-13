@@ -16,9 +16,16 @@ const translations: Record<Locale, any> = {
 interface I18nContextType {
   locale: Locale;
   setLocale: (l: Locale) => void;
-  t: (path: string) => any; // Função para caminhos com pontos
-  dict: typeof en;          // Objeto para acesso direto
+  t: (path: string) => string;
+  dict: any;
 }
+
+const value = useMemo(() => ({
+  locale,
+  setLocale,
+  t,
+  dict: translations[locale]
+}), [locale, setLocale, t]);
 
 const I18nContext = createContext<I18nContextType | undefined>(undefined);
 
