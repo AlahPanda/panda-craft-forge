@@ -28,7 +28,7 @@
     "rating": "Rating",
     "version": "Version"
   },
-"project": {
+  "project": {
     "requirements": "Requirements",
     "instructions": "Instructions",
     "download": "Download",
