@@ -23,17 +23,13 @@ export const localeLabels: Record<Locale, string> = {
 interface I18nContextType {
   locale: Locale;
   setLocale: (l: Locale) => void;
-  // t agora é uma função que aceita o caminho (ex: "nav.home")
-  t: (path: string) => any;
-  // dict mantém o acesso direto ao objeto se precisares (t.nav.home)
-  dict: typeof en;
+  t: any; // Mantemos como any para suportar os dois usos
 }
 
 const I18nContext = createContext<I18nContextType>({
   locale: 'en',
   setLocale: () => {},
-  t: (path: string) => path,
-  dict: en,
+  t: en,
 });
 
 export function I18nProvider({ children }: { children: React.ReactNode }) {
@@ -47,28 +43,22 @@ export function I18nProvider({ children }: { children: React.ReactNode }) {
     localStorage.setItem('alahpanda-locale', l);
   }, []);
 
-  // Esta é a função mágica que resolve "project.mac-native.description"
-  const t = useCallback((path: string) => {
-    const keys = path.split('.');
-    let result = translations[locale];
+  // Criamos uma função que também tem as propriedades do objeto de tradução
+  const t = useMemo(() => {
+    const currentDict = translations[locale];
     
-    for (const key of keys) {
-      if (result[key] === undefined) return path; // Se não achar, mostra a chave
-      result = result[key];
-    }
-    
-    return result;
+    // Esta é a função que resolve caminhos como "project.item.desc"
+    const translateFn = (path: string) => {
+      if (typeof path !== 'string') return path;
+      return path.split('.').reduce((obj, key) => obj?.[key], currentDict) || path;
+    };
+
+    // Copiamos as propriedades do JSON para a função para t.nav.home continuar a funcionar
+    return Object.assign(translateFn, currentDict);
   }, [locale]);
 
-  const value = useMemo(() => ({
-    locale,
-    setLocale,
-    t,
-    dict: translations[locale]
-  }), [locale, setLocale, t]);
-
   return (
-    <I18nContext.Provider value={value}>
+    <I18nContext.Provider value={{ locale, setLocale, t }}>
       {children}
     </I18nContext.Provider>
   );
