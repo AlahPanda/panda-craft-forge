@@ -1,0 +1,58 @@
+{
+  "nav": {
+    "home": "Home",
+    "modpacks": "Modpacks",
+    "news": "Lab Updates",
+    "about": "About",
+    "discord": "Discord"
+  },
+  "landing": {
+    "title": "AlahPanda Labs",
+    "subtitle": "Handcrafted Minecraft Modpacks",
+    "cta": "Explore Modpacks",
+    "features": {
+      "safe": "Safe & Tested",
+      "safeDesc": "Every modpack is manually tested for stability and performance.",
+      "native": "Platform Native",
+      "nativeDesc": "Updates are delivered through Modrinth and CurseForge natively.",
+      "open": "Open Source",
+      "openDesc": "Transparent mod lists and configurations you can inspect."
+    }
+  },
+  "modpacks": {
+    "title": "Modpack Hub",
+    "subtitle": "Browse our curated collection of Minecraft modpacks",
+    "explore": "Explore",
+    "comingSoon": "More modpacks coming soon...",
+    "downloads": "Downloads",
+    "rating": "Rating",
+    "version": "Version"
+  },
+  "project": {
+    "requirements": "Requirements",
+    "instructions": "Instructions",
+    "download": "Download",
+    "back": "Back",
+    "downloadModal": "Choose Platform",
+    "active": "Download",
+    "soon": "Coming Soon",
+    "adRedirect": "Download (Ad-Supported)"
+  },
+  "news": {
+    "title": "Lab Updates",
+    "subtitle": "Latest news and announcements from the lab",
+    "readMore": "Read More",
+    "featured": "Featured"
+  },
+  "about": {
+    "title": "The Lone Panda",
+    "body1": "Hey there! 👋 Welcome to AlahPanda Labs — a one-developer show powered by passion, an unhealthy amount of coffee, and a MacBook that's constantly questioning its life choices.",
+    "body2": "This is not a platform. It's not a startup. It's a curated personal repository for my Minecraft modpacks — built with direct installation guides, optimized metadata, and zero corporate nonsense.",
+    "body3": "Every modpack here was born from hours of testing, tweaking, and occasionally yelling at config files. I build what I want to play, and I share it because... well, why not?",
+    "body4": "If something breaks, that's a feature. If something works perfectly, I'm as surprised as you are. 🐼"
+  },
+  "footer": {
+    "version": "v1.1.0-stable",
+    "tagline": "AlahPanda Labs — Handcrafted with passion"
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "nav": {
+    "home": "Início",
+    "modpacks": "Modpacks",
+    "news": "Atualizações",
+    "about": "Sobre",
+    "discord": "Discord"
+  },
+  "landing": {
+    "title": "AlahPanda Labs",
+    "subtitle": "Modpacks de Minecraft Artesanais",
+    "cta": "Explorar Modpacks",
+    "features": {
+      "safe": "Seguro & Testado",
+      "safeDesc": "Cada modpack é testado manualmente para estabilidade e desempenho.",
+      "native": "Plataforma Nativa",
+      "nativeDesc": "As atualizações são entregues pelo Modrinth e CurseForge nativamente.",
+      "open": "Código Aberto",
+      "openDesc": "Listas de mods e configurações transparentes que pode inspecionar."
+    }
+  },
+  "modpacks": {
+    "title": "Hub de Modpacks",
+    "subtitle": "Navegue a nossa coleção curada de modpacks de Minecraft",
+    "explore": "Explorar",
+    "comingSoon": "Mais modpacks em breve...",
+    "downloads": "Downloads",
+    "rating": "Avaliação",
+    "version": "Versão"
+  },
+  "project": {
+    "requirements": "Requisitos",
+    "instructions": "Instruções",
+    "download": "Download",
+    "back": "Voltar",
+    "downloadModal": "Escolha a Plataforma",
+    "active": "Transferir",
+    "soon": "Em Breve",
+    "adRedirect": "Transferir (Com Anúncio)"
+  },
+  "news": {
+    "title": "Atualizações do Lab",
+    "subtitle": "Últimas notícias e anúncios do laboratório",
+    "readMore": "Ler Mais",
+    "featured": "Destaque"
+  },
+  "about": {
+    "title": "O Panda Solitário",
+    "body1": "Olá! 👋 Bem-vindo ao AlahPanda Labs — um projeto de um único programador, movido a paixão, uma quantidade absurda de café e um MacBook que questiona as suas escolhas de vida.",
+    "body2": "Isto não é uma plataforma. Não é uma startup. É um repositório pessoal curado para os meus modpacks de Minecraft — com guias diretos, metadados otimizados e zero treta corporativa.",
+    "body3": "Cada modpack aqui nasceu de horas de testes, ajustes e ocasionalmente gritar com ficheiros de configuração. Construo o que quero jogar e partilho porque... porque não?",
+    "body4": "Se algo avariar, é uma funcionalidade. Se algo funcionar na perfeição, estou tão surpreendido quanto tu. 🐼"
+  },
+  "footer": {
+    "version": "v1.1.0-stable",
+    "tagline": "AlahPanda Labs — Feito com paixão"
+  }
+}
