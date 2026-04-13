@@ -6,7 +6,8 @@ import { useI18n } from '@/contexts/I18nContext';
 import { GlowCard } from '@/components/GlowCard';
 
 export default function Modpacks() {
-  const { t } = useI18n();
+  // Puxamos 't' (função para os pontos) e 'dict' (objeto para o resto)
+  const { t, dict } = useI18n();
 
   return (
     <div className="min-h-screen pt-24 pb-20 px-4">
@@ -18,9 +19,9 @@ export default function Modpacks() {
           className="text-center mb-12"
         >
           <h1 className="font-display font-extrabold text-4xl sm:text-5xl text-foreground">
-            {t.modpacks.title}
+            {dict.modpacks.title}
           </h1>
-          <p className="mt-3 text-muted-foreground text-lg">{t.modpacks.subtitle}</p>
+          <p className="mt-3 text-muted-foreground text-lg">{dict.modpacks.subtitle}</p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -40,8 +41,10 @@ export default function Modpacks() {
                     </span>
                   </div>
                   <h2 className="font-display font-bold text-xl text-foreground">{project.name}</h2>
-                  <p className="text-sm text-primary/70 font-medium">{project.subtitle}</p>
-                  <p className="mt-3 text-sm text-muted-foreground flex-1">{project.description}</p>
+                  
+                  {/* CORREÇÃO: Usar t() para traduzir a chave dinâmica */}
+                  <p className="text-sm text-primary/70 font-medium">{t(project.subtitle)}</p>
+                  <p className="mt-3 text-sm text-muted-foreground flex-1">{t(project.description)}</p>
 
                   <div className="flex flex-wrap gap-1.5 mt-4">
                     {project.tags.map(tag => (
@@ -65,7 +68,7 @@ export default function Modpacks() {
                     to={`/project/${project.slug}`}
                     className="mt-5 inline-flex items-center gap-2 text-primary text-sm font-semibold hover:gap-3 transition-all"
                   >
-                    {t.modpacks.explore} <ArrowRight className="w-4 h-4" />
+                    {dict.modpacks.explore} <ArrowRight className="w-4 h-4" />
                   </Link>
                 </div>
               </GlowCard>
@@ -79,7 +82,7 @@ export default function Modpacks() {
           viewport={{ once: true }}
           className="text-center text-muted-foreground mt-16 text-lg"
         >
-          {t.modpacks.comingSoon}
+          {dict.modpacks.comingSoon}
         </motion.p>
       </div>
     </div>
