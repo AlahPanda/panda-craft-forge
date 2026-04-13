@@ -13,24 +13,14 @@ const translations: Record<Locale, any> = {
   es,
 };
 
-export const localeLabels: Record<Locale, string> = {
-  en: 'EN',
-  'pt-br': 'PT-BR',
-  'pt-pt': 'PT-PT',
-  es: 'ES',
-};
-
 interface I18nContextType {
   locale: Locale;
   setLocale: (l: Locale) => void;
-  t: any; // Mantemos como any para suportar os dois usos
+  t: (path: string) => any; // Função para caminhos com pontos
+  dict: typeof en;          // Objeto para acesso direto
 }
 
-const I18nContext = createContext<I18nContextType>({
-  locale: 'en',
-  setLocale: () => {},
-  t: en,
-});
+const I18nContext = createContext<I18nContextType | undefined>(undefined);
 
 export function I18nProvider({ children }: { children: React.ReactNode }) {
   const [locale, setLocaleState] = useState<Locale>(() => {
@@ -43,27 +33,34 @@ export function I18nProvider({ children }: { children: React.ReactNode }) {
     localStorage.setItem('alahpanda-locale', l);
   }, []);
 
-  // Criamos uma função que também tem as propriedades do objeto de tradução
-  const t = useMemo(() => {
-    const currentDict = translations[locale];
+  const t = useCallback((path: string) => {
+    if (!path || typeof path !== 'string') return path;
+    const keys = path.split('.');
+    let result = translations[locale];
     
-    // Esta é a função que resolve caminhos como "project.item.desc"
-    const translateFn = (path: string) => {
-      if (typeof path !== 'string') return path;
-      return path.split('.').reduce((obj, key) => obj?.[key], currentDict) || path;
-    };
-
-    // Copiamos as propriedades do JSON para a função para t.nav.home continuar a funcionar
-    return Object.assign(translateFn, currentDict);
+    for (const key of keys) {
+      if (!result || result[key] === undefined) return path;
+      result = result[key];
+    }
+    return result;
   }, [locale]);
 
+  const value = useMemo(() => ({
+    locale,
+    setLocale,
+    t,
+    dict: translations[locale]
+  }), [locale, setLocale, t]);
+
   return (
-    <I18nContext.Provider value={{ locale, setLocale, t }}>
+    <I18nContext.Provider value={value}>
       {children}
     </I18nContext.Provider>
   );
 }
 
 export function useI18n() {
-  return useContext(I18nContext);
+  const context = useContext(I18nContext);
+  if (!context) throw new Error("useI18n must be used within I18nProvider");
+  return context;
 }
