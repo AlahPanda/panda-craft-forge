@@ -43,7 +43,7 @@ export function TopNav() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
         <Link to="/" className="flex items-center gap-2 text-foreground font-display font-extrabold text-xl">
-          <span className="text-2xl">🐼</span>
+          <img src="/logo.jpeg" alt="Logo" className="h-8 w-8 object-contain" />
           <span className="hidden sm:inline">AlahPanda<span className="text-primary"> Labs</span></span>
         </Link>
 
