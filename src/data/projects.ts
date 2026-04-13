@@ -84,7 +84,7 @@ export const projects: Project[] = [
     requirements: [
       { label: 'project.requirements_list.os', value: 'Any', icon: '💻', status: 'check' },
       { label: 'project.requirements_list.ram', value: '6 GB+', icon: '🧠', status: 'warning' },
-      { label: 'project.requirements_list.gpu', value: 'project.requirements_list.gpu_val', icon: '🎮', status: 'warning' },
+     { label: 'project.requirements_list.gpu_val', value: 'Dedicated GPU', icon: '🎮', status: 'warning' },
       { label: 'project.requirements_list.loader', value: 'Fabric', icon: '🧵', status: 'check' },
     ],
     instructions: [
